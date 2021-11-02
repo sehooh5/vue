@@ -52,7 +52,7 @@ var app5 = new Vue({
     }
 })
 
-app5.message = "바꿧지롱~~~~~~!!"
+app5.message = "변경해봤습니다!"
 
 
 var app6 = new Vue({
