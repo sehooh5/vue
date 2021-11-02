@@ -1,64 +1,51 @@
 var app = new Vue({ 
     el: '#app',
     data: {
-        message: 'Hello Vue!'
+        person : {
+            name: 'seho',
+            age: 99
+        },
+        inputData: 'this is input data',
+        type: 'text',
+        link: 'https://www.youtube.com/'
+    },
+    methods: {
+        getSehoLink(channel){
+          return this.link + channel  
+        },
+        nextYear(greeting){
+            return greeting + '! ' + this.person.name + ' 는 내년에 ' + (this.person.age+1) + ' 살 입니다.'
+        },
+        otherMethod(){
+            this.nextYear();
+        }
     }
 });
 
-app.message = '데이터를 바꿔서 화면에 표출했다!!';
-
-
-var app2 = new Vue({
-    el: '#app-2',
+var app2 = new Vue({ 
+    el: '#app2',
     data: {
-      message: '이 페이지는 ' + new Date() + ' 에 로드 되었습니다'
-    }
-})
-
-app2.message = '데이터를 바꿔서 화면에 표출했다!!2222';
-
-
-var app3 = new Vue({
-el: '#app-3',
-data: {
-    seen: true
-}
-})
-
-app3.seen = false
-
-
-var app4 = new Vue({
-    el: '#app-4',
-    data: {
-      todos: [
-        { text: 'JavaScript 배우기' },
-        { text: 'Vue 배우기' },
-        { text: '무언가 멋진 것을 만들기' }
-      ]
-    }
-})
-
-
-var app5 = new Vue({
-    el: '#app-5',
-    data: {
-      message: '안녕하세요! Vue.js!'
+        year: 2021
     },
     methods: {
-      reverseMessage: function () {
-        this.message = this.message.split('').reverse().join('')
-      }
+        plus(){
+            this.year++;
+        },
+        minus(){
+            this.year--;
+        }
     }
-})
+});
 
-app5.message = "변경해봤습니다!"
-
-
-var app6 = new Vue({
-    el: '#app-6',
+var app3 = new Vue({ 
+    el: '#app3',
     data: {
-      message: '안녕하세요 Vue!'
+    },
+    methods: {
+        submit(){
+            alert('submitted')
+            console.log('hihihihihi')
+        }
     }
-})
+});
 
