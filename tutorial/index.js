@@ -40,8 +40,12 @@ var app2 = new Vue({
 var app3 = new Vue({ 
     el: '#app3',
     data: {
+        text: 'text'
     },
     methods: {
+        // updateText(event){
+        //     this.text = event.target.value;
+        // },
         submit(){
             alert('submitted')
             console.log('hihihihihi')
@@ -49,3 +53,62 @@ var app3 = new Vue({
     }
 });
 
+var app4 = new Vue({ 
+    el: '#app4',
+    data: {
+        message: "안녕하세요"
+    },
+    methods: {
+        changeMessage(){
+            this.message = 'seho!!!';
+        }
+    },
+    computed: {
+        reversedMessage(){
+            return this.message.split('').reverse().join('' )
+        }
+    }
+});
+
+var watch = new Vue({ 
+    el: '#watch',
+    data: {
+        message: "안녕하세요",
+        updated: "아니요"
+    },
+    methods: {
+        changeMessage(){
+            this.message = 'seho!!!';
+        }
+    },
+    computed: {
+        reversedMessage(){
+            return this.message.split('').reverse().join('' )
+        }
+    },
+    watch: {
+        message(newVal, oldVal) {
+            console.log(newVal, oldVal);
+            this.updated = "네~!";
+        }
+    }
+});
+
+var cnb = new Vue({ 
+    el: '#cnb',
+    data: {
+        isRed: false,
+        isBold: false,
+        styleObject: {
+            color: 'red',
+            fontSize: '30px'
+        }
+    },
+    methods: {
+        update(){
+            this.isBold = !this.isBold;
+            this.isRed = !this.isRed;
+        }
+    },
+    
+});

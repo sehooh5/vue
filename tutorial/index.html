@@ -3,6 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <style>
+            .red{
+                color: red;
+            }
+            .bold {
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <h4>app1</h4>
@@ -23,11 +31,36 @@
         <h4>app3</h4>
         <div id="app3">
             <form v-on:submit.once="submit">
-                <input type="text"><br>
+                <!-- <input type="text" :value="text" @keyup="updateText"><br> -->
+                <input type="text" v-model="text"><br>
+                {{ text }}<br>
                 <button type="submit">Submit</button>
             </form>
         </div>
+        <hr>
+        <h4>computed</h4>
+        <div id="app4">
+            {{ reversedMessage }}
+            {{ reversedMessage }}
+            <button @click="changeMessage">Click</button>
+        </div>
+        <hr>
+        <h4>watch</h4>
+        <div id="watch">
+            {{ message }} <br>
+            <button @click="changeMessage">Click</button> <br>    
+            {{ updated }}
+        </div>
+        <hr>
+        <h4>class&binding</h4>
+        <div id="cnb">
+            <div :class="{ red: isRed, bold: isBold }">class binding</div>
+            <button @click="update">Click</button>
+            <div :style="styleObject">style binding</div>
+        </div>
         
+
+
         <script src="index.js"></script>
     </body>
 </html>
