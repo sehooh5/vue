@@ -112,3 +112,38 @@ var cnb = new Vue({
     },
     
 });
+
+var vif = new Vue({ 
+    el: '#vif',
+    data: {
+        show: true,
+        number: 1,
+    },
+    methods: {
+        toggleShow(){
+            this.show = !this.show;
+        },
+        increaseNumber(){
+            this.number++;
+        },
+    },
+    
+});
+
+
+var vshow = new Vue({ 
+    el: '#vshow',
+    data: {
+        show: false,
+        number: 1,
+    },
+    methods: {
+        toggle(){
+            this.show = !this.show;
+        },
+        increaseNumber(){
+            this.number++;
+        },
+    },
+    
+});

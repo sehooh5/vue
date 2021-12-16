@@ -58,7 +58,32 @@
             <button @click="update">Click</button>
             <div :style="styleObject">style binding</div>
         </div>
-        
+        <hr>
+        <h4>v-if</h4>
+        <div id="vif">
+            <!-- 여러 태그를 한꺼번에 vif 적용하고 싶을때 template 태그 사용-->
+            <template v-if="show"> 
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </template>   
+            <template v-if="number === 1"> 
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </template>        
+            <div v-else-if="number === 2">Hi</div>      
+            <div v-else>No</div><br>
+            <button @click="toggleShow">Toggle</button>
+            <button @click="increaseNumber">Increase</button> {{number}}
+        </div>
+        <hr>
+        <h4>v-show</h4>
+        <div id="vshow">
+            <div v-show=show>Yes</div>
+            <br>
+            <button @click="toggle">Toggle</button>
+        </div>
 
 
         <script src="index.js"></script>
